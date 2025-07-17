@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FE-WD-Task1</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <div class="logo">Repalogic</div>
+      <ul class="nav-links">
+        <li><a href="#service">Service</a></li>
+        <li><a href="#technology">Technology</a></li>
+        <li><a href="#casestudies">Case Studies</a></li>
+        <li><a href="#about">About us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+  <main>
+  <section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Accelerating Your Digital Success</h1>
+        <p>For 20+ years, repalogic has empowered businesses to build digital identities that drive visibility, engagement, and growth.</p>
+        <a href="#articles" class="cta-button">Read More</a>
+      </div>
+      <img src="assets/repalogicHome.jpg" alt="Header Media" class="header-media" width="350">
+    </div>
+  </div>
+</section>
+
+
+    <section class="featured-section">
+      <div class="container">
+        <div class="articles-grid">
+          <article class="article-card">
+           <div class="article-image">
+    <img src="assets/pic1.jpg" alt="pic1" width="140">
+  </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span>Wed Jun 10 2024</span>
+                <span>Digital competence</span>
+              </div>
+              <h3 class="article-title">We have been working intensively on the subject of digitization for almost 25 years</h3>
+              <a href="#" class="read-more">Read more →</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+                       <div class="article-image">
+
+              <img src="assets/pic2.jpg" alt="pic1" width="140">
+              </div>
+            <div class="article-content">
+              <div class="article-meta">
+                <span>Wed Jun 14 2024</span>
+                <span>Knowledge sharing</span>
+              </div>
+              <h3 class="article-title">No matter which services you are interested in - our support team will make you saddle-fast in dealing with the new technology</h3>
+              <a href="#" class="read-more">Read more →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="newsletter container">
+    <h2>Get our newsletter</h2>
+    <p>To join worldwide community</p>
+    <form>
+      <input type="email" placeholder="Eg.  info@repalogic.com" required>
+      <button type="submit">Send now</button>
+    </form>
+  </section>
+
+  <section class="feature-carousel container">
+    <div class="carousel-container">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="feature-box">
+              <img src="assets/img1.jpg" alt="img1" width="140">
+          <h3>UI/UX</h3>
+          <p>We craft intuitive, engaging interfaces and smooth experiences that keep users coming back.</p>
+        </div>       
+        <div class="feature-box">
+              <img src="assets/img2.jpg" alt="img2" width="140">
+          <h3>Web Development</h3>
+          <p>From simple sites to complex platforms, we build secure, scalable websites tailored to your brand.</p>
+        </div>
+        <div class="feature-box">
+              <img src="assets/img3.jpg" alt="img3" width="140">
+          <h3>Mobile and Web App</h3>
+          <p>We develop custom mobile and web apps that deliver performance, usability, and cross-platform compatibility.</p>
+        </div>
+        <div class="feature-box">
+              <img src="assets/img4.jpg" alt="img4" width="140">
+          <h3>Digital Marketing</h3>
+          <p>Our digital strategies boost visibility, attract the right audience, and turn clicks into customers.</p>
+        </div>
+        <div class="feature-box">
+              <img src="assets/img5.jpg" alt="img5" width="140">
+          <h3>Accessible Web Pages and Online Shops</h3>
+          <p>We build inclusive websites and shops that meet standards—ensuring everyone can engage with ease.</p>
+        </div>
+        <div class="feature-box">
+              <img src="assets/img6.jpg" alt="img6" width="140">
+          <h3>Accessible Mobile Apps</h3>
+          <p>Our apps combine functionality with accessibility to deliver inclusive experiences on every device.</p>
+        </div>
+      </div>
+    </div>
+    
+
+    
+    <div class="carousel-indicators" id="indicators"></div>
+  </section>
+
+  <footer class="main-footer container">
+    <div class="footer-box">
+      <h4>Accessible websites - why they are more important than you think</h4>
+      <p>The digital world must be accessible to everyone. In Germany, around 6 to 8 million people are dependent on accessible websites due to age-related limitations. </p>
+      <button>View more</button>
+    </div>
+    <div class="footer-box">
+      <h4>TYRIOS is more than just innovative IT – TYRIOS embodies our philosophy.</h4>
+      <p>We regularly challenge ourselves to ensure that our ideas and approaches in developing our TYRIOS software meet today’s requirements. In addition to offering a solution-oriented software, we also stand by our clients as a competent advisor.</p>
+      <button>View more</button>
+    </div>
+    <div class="footer-box">
+      <h4>From Theory to Practice: A Hands-On Guide to Understanding Your Market</h4>
+      <p>Combining human know-how with automation. Think of it as blending intuition with tech power. But, before diving in, there's a key first step - know your audience.</p>
+      <button>View more</button>
+    </div>
+  </footer>
+
+  <script>
+    class FeatureCarousel {
+      constructor() {
+        this.track = document.getElementById('carouselTrack');
+        this.indicators = document.getElementById('indicators');
+        this.items = this.track.querySelectorAll('.feature-box');
+        this.currentIndex = 0;
+        this.itemsPerView = 3;
+        this.totalItems = this.items.length;
+        this.maxIndex = Math.max(0, this.totalItems - this.itemsPerView);
+        this.autoPlayInterval = null;
+        
+        this.init();
+      }
+
+      init() {
+        this.createIndicators();
+        this.updateCarousel();
+        this.handleResize();
+        this.startAutoPlay();
+      }
+
+      createIndicators() {
+        this.indicators.innerHTML = '';
+        const totalPages = this.totalItems - this.itemsPerView + 1;
+        
+        for (let i = 0; i < totalPages; i++) {
+          const indicator = document.createElement('div');
+          indicator.className = 'indicator';
+          indicator.addEventListener('click', () => this.goToSlide(i));
+          this.indicators.appendChild(indicator);
+        }
+      }
+
+      updateCarousel() {
+        const itemWidth = this.items[0].offsetWidth;
+        const gap = 24; // 1.5rem gap
+        const translateX = -(this.currentIndex * (itemWidth + gap));
+        
+        this.track.style.transform = `translateX(${translateX}px)`;
+        
+        // Update indicators
+        const indicators = this.indicators.querySelectorAll('.indicator');
+        indicators.forEach((indicator, index) => {
+          indicator.classList.toggle('active', index === this.currentIndex);
+        });
+      }
+
+      goToSlide(slideIndex) {
+        this.currentIndex = slideIndex;
+        this.updateCarousel();
+        this.restartAutoPlay();
+      }
+
+      nextSlide() {
+        if (this.currentIndex < this.maxIndex) {
+          this.currentIndex++;
+        } else {
+          this.currentIndex = 0; // Loop back to start
+        }
+        this.updateCarousel();
+      }
+
+      startAutoPlay() {
+        this.autoPlayInterval = setInterval(() => {
+          this.nextSlide();
+        }, 2000); // Move every 2 seconds
+      }
+
+      stopAutoPlay() {
+        if (this.autoPlayInterval) {
+          clearInterval(this.autoPlayInterval);
+          this.autoPlayInterval = null;
+        }
+      }
+
+      restartAutoPlay() {
+        this.stopAutoPlay();
+        this.startAutoPlay();
+      }
+
+      handleResize() {
+        window.addEventListener('resize', () => {
+          const width = window.innerWidth;
+          if (width <= 600) {
+            this.itemsPerView = 1;
+          } else if (width <= 768) {
+            this.itemsPerView = 2;
+          } else {
+            this.itemsPerView = 3;
+          }
+          
+          this.maxIndex = Math.max(0, this.totalItems - this.itemsPerView);
+          this.currentIndex = Math.min(this.currentIndex, this.maxIndex);
+          this.createIndicators();
+          this.updateCarousel();
+        });
+      }
+    }
+
+    // Initialize carousel when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      new FeatureCarousel();
+    });
+  </script>
+</body>
+</html>
